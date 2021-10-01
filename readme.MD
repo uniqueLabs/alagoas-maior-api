@@ -17,7 +17,7 @@
 
 # Sobre o Projeto
 
-Este projeto se trata de uma api que gerencia livros, cds e dvds e contatos.
+Este projeto se trata de uma api que gerencia livros, cds, dvds e contatos.
 
 O repositório atual contempla todo o escopo do back-end.
 A interface (front-end) está no seguinte repositório: https://github.com/M3ndes/pagarme-challenge-ui

@@ -22,3 +22,9 @@ $app->post('/contact', App\Controller\Contact\Create::class);
 $app->get('/contact/{id}', App\Controller\Contact\GetOne::class);
 $app->put('/contact/{id}', App\Controller\Contact\Update::class);
 $app->delete('/contact/{id}', App\Controller\Contact\Delete::class);
+
+$app->get('/dvd', App\Controller\Dvd\GetAll::class);
+$app->post('/dvd', App\Controller\Dvd\Create::class);
+$app->get('/dvd/{id}', App\Controller\Dvd\GetOne::class);
+$app->put('/dvd/{id}', App\Controller\Dvd\Update::class);
+$app->delete('/dvd/{id}', App\Controller\Dvd\Delete::class);

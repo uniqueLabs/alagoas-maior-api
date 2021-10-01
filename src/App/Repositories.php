@@ -13,3 +13,7 @@ $container['cd_repository'] = static function (Pimple\Container $container): App
 $container['contact_repository'] = static function (Pimple\Container $container): App\Repository\ContactRepository {
     return new App\Repository\ContactRepository($container['db']);
 };
+
+$container['dvd_repository'] = static function (Pimple\Container $container): App\Repository\DvdRepository {
+    return new App\Repository\DvdRepository($container['db']);
+};

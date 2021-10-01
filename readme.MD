@@ -11,7 +11,6 @@
   - [Rodando o projeto](#rodando-o-projeto)
       - [Com Docker](#com-docker)
       - [Sem Docker](#sem-docker)
-- [Estrutura do projeto](#estrutura-do-projeto)
 
 <!-- ABOUT THE PROJECT -->
 
@@ -22,7 +21,7 @@ Este projeto se trata de uma api que gerencia livros, cds, dvds e contatos.
 O repositório atual contempla todo o escopo do back-end.
 A interface (front-end) está no seguinte repositório: https://github.com/M3ndes/pagarme-challenge-ui
 
-
+Read this in other language: [English](README.en.md) 
 # Desenvolvimento
 
 Abaixo segue o que foi utilizado no desenvolvimento deste projeto:

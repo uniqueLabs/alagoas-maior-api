@@ -11,7 +11,6 @@
   - [Rodando o projeto](#rodando-o-projeto)
       - [Com Docker](#com-docker)
       - [Sem Docker](#sem-docker)
-- [Estrutura do projeto](#estrutura-do-projeto)
 
 <!-- ABOUT THE PROJECT -->
 

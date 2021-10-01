@@ -16,3 +16,9 @@ $app->post('/cd', App\Controller\Cd\Create::class);
 $app->get('/cd/{id}', App\Controller\Cd\GetOne::class);
 $app->put('/cd/{id}', App\Controller\Cd\Update::class);
 $app->delete('/cd/{id}', App\Controller\Cd\Delete::class);
+
+$app->get('/contact', App\Controller\Contact\GetAll::class);
+$app->post('/contact', App\Controller\Contact\Create::class);
+$app->get('/contact/{id}', App\Controller\Contact\GetOne::class);
+$app->put('/contact/{id}', App\Controller\Contact\Update::class);
+$app->delete('/contact/{id}', App\Controller\Contact\Delete::class);

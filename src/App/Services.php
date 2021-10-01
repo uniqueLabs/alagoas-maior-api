@@ -9,3 +9,7 @@ $container['book_service'] = static function (Pimple\Container $container): App\
 $container['cd_service'] = static function (Pimple\Container $container): App\Service\CdService {
     return new App\Service\CdService($container['cd_repository']);
 };
+
+$container['contact_service'] = static function (Pimple\Container $container): App\Service\ContactService {
+    return new App\Service\ContactService($container['contact_repository']);
+};

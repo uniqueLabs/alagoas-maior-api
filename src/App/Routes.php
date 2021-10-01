@@ -4,3 +4,9 @@ declare(strict_types=1);
 
 $app->get('/', 'App\Controller\Home:getHelp');
 $app->get('/status', 'App\Controller\Home:getStatus');
+
+$app->get('/book', App\Controller\Book\GetAll::class);
+$app->post('/book', App\Controller\Book\Create::class);
+$app->get('/book/{id}', App\Controller\Book\GetOne::class);
+$app->put('/book/{id}', App\Controller\Book\Update::class);
+$app->delete('/book/{id}', App\Controller\Book\Delete::class);

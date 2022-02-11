@@ -12,7 +12,7 @@ class ProdutorTest extends TestCase
     {
         $params = [
             '' => '',
-            'produtor_id' => 1
+            'produtor_id' => 999
         ];
         $req = $this->createRequest('POST', '/produtor');
         $request = $req->withParsedBody($params);
@@ -20,7 +20,7 @@ class ProdutorTest extends TestCase
 
         $result = (string) $response->getBody();
 
-        self::$id = json_decode($result)->id;
+        self::$id = json_decode($result)->produtor_id;
 
         $this->assertEquals(201, $response->getStatusCode());
         $this->assertStringContainsString('id', $result);
@@ -69,7 +69,6 @@ class ProdutorTest extends TestCase
         $response = $this->getAppInstance()->handle($request);
 
         $result = (string) $response->getBody();
-
         $this->assertEquals(200, $response->getStatusCode());
         $this->assertStringContainsString('id', $result);
         $this->assertStringNotContainsString('error', $result);

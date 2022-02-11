@@ -11,7 +11,7 @@
     </exclude>
   </coverage>
   <testsuites>
-    <testsuite name="pagarme-challenge">
+    <testsuite name="alagoasmaior">
       <directory>tests</directory>
     </testsuite>
   </testsuites>

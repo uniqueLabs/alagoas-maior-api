@@ -11,7 +11,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 
 final class Home
 {
-    private const API_NAME = 'pagarme-challenge';
+    private const API_NAME = 'alagoasmaior';
 
     private const API_VERSION = '1.0.0';
 

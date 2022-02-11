@@ -1,6 +1,6 @@
 {
-    "name": "m3ndes/pagarme-challenge",
-    "description": "pagarme challenge back-end application",
+    "name": "m3ndes/alagoasmaior",
+    "description": "alagoasmaior back-end application",
     "authors": [
         {
             "name": "Thales Mendes",
@@ -28,7 +28,10 @@
             "php": "7.4.0"
         },
         "sort-packages": true,
-        "process-timeout": 0
+        "process-timeout": 0,
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
     },
     "autoload": {
         "psr-4": {

@@ -1,6 +1,6 @@
 <!-- TABLE OF CONTENTS -->
 
-# Pagar.me challenge 
+# Alagoas Maior  
 
 - [About the Project](#about-the-project)
 - [Development](#development)
@@ -14,10 +14,7 @@
 
 # About the project
 
-This project is about an api that manages books, cds, dvds and contacts.
-
 The current repository covers the entire scope of the backend.
-The interface (front-end) is in the following repository: https://github.com/M3ndes/pagarme-challenge-ui
 
 # Development
 
@@ -25,7 +22,6 @@ Below is what was used in the development of this project:
 
 - [PHP](https://www.php.net/) - PHP is a free interpreted language, originally used only for the development of present and active applications on the server side;
 - [SLIM](https://www.slimframework.com/) - Slim is a PHP micro framework that helps you quickly write simple but powerful web applications and APIs;
-- [ANGULAR](http://angular.io/) - Angular is an open-source front-end web application platform based on TypeScript;
 - [Docker](https://www.docker.com/) - Docker is a set of platform-as-a-service products that use OS-level virtualization to deliver software in packages called containers;
 - [Mysql](https://www.mysql.com/) - MySQL is a database management system, which uses the SQL language as an interface;
 
@@ -58,7 +54,7 @@ To run the application it is necessary to have php and composer installed. After
 composer install
 composer start
 ```
-If you choose to run without docker, the database start script is located at: docker/db-dump/pagarme-challenge.sql
+If you choose to run without docker, the database start script is located at: docker/db-dump/alagoasmaior.sql
 
 ### Tests
 To run the application tests, simply navigate to the root folder and execute the following command:

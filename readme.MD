@@ -2,7 +2,7 @@
 
 <!-- TABLE OF CONTENTS -->
 
-# Pagar.me challenge
+# Alagoas Maior 
 
 - [Sobre o Projeto](#sobre-o-projeto)
 - [Desenvolvimento](#desenvolvimento)
@@ -16,10 +16,7 @@
 
 # Sobre o Projeto
 
-Este projeto se trata de uma api que gerencia livros, cds, dvds e contatos.
-
 O repositório atual contempla todo o escopo do back-end.
-A interface (front-end) está no seguinte repositório: https://github.com/M3ndes/pagarme-challenge-ui
 
 Read this in other language: [English](readme.en.md) 
 # Desenvolvimento
@@ -28,7 +25,6 @@ Abaixo segue o que foi utilizado no desenvolvimento deste projeto:
 
 - [PHP](https://www.php.net/) - PHP é uma linguagem interpretada livre, usada originalmente apenas para o desenvolvimento de aplicações presentes e atuantes no lado do servidor;
 - [SLIM](https://www.slimframework.com/) - Slim é uma micro estrutura de PHP que ajuda você a escrever rapidamente aplicativos e APIs da web simples, mas poderosos;
-- [ANGULAR](http://angular.io/) - Angular é uma plataforma de aplicações web de código-fonte aberto e front-end baseado em TypeScript;
 - [Docker](https://www.docker.com/) - Docker é um conjunto de produtos de plataforma como serviço que usam virtualização de nível de sistema operacional para entregar software em pacotes chamados contêineres;
 - [Mysql](https://www.mysql.com/) - O MySQL é um sistema de gerenciamento de banco de dados, que utiliza a linguagem SQL como interface;
 
@@ -61,7 +57,7 @@ Para executar a aplicação é necessário ter o php e composer instalados. Apó
 composer install
 composer start
 ```
-Caso opte por executar sem docker, o script inicial do banco de dados está localizado em: docker/db-dump/pagarme-challenge.sql
+Caso opte por executar sem docker, o script inicial do banco de dados está localizado em: docker/db-dump/alagoasmaior.sql
 
 ### Testes
 Para executar os testes da aplicação basta navegar até a pasta raiz e executar o seguinte comando:

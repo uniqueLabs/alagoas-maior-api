@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Controller\Contact;
+namespace App\Controller\Produtor;
 
 use App\Helper\JsonResponse;
 use Psr\Http\Message\ResponseInterface as Response;
@@ -13,8 +13,8 @@ final class Create extends Base
     public function __invoke(Request $request, Response $response): Response
     {
         $input = (array) $request->getParsedBody();
-        $contact = $this->getContactService()->create($input);
+        $produtor = $this->getProdutorService()->create($input);
 
-        return JsonResponse::withJson($response, (string) json_encode($contact), 201);
+        return JsonResponse::withJson($response, (string) json_encode($produtor), 201);
     }
 }

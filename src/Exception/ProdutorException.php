@@ -4,6 +4,6 @@ declare(strict_types=1);
 
 namespace App\Exception;
 
-final class CdException extends \Exception
+final class ProdutorException extends \Exception
 {
 }

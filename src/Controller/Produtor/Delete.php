@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Controller\Contact;
+namespace App\Controller\Produtor;
 
 use App\Helper\JsonResponse;
 use Psr\Http\Message\ResponseInterface as Response;
@@ -18,7 +18,7 @@ final class Delete extends Base
         Response $response,
         array $args
     ): Response {
-        $this->getContactService()->delete((int) $args['id']);
+        $this->getProdutorService()->delete((int) $args['id']);
 
         return JsonResponse::withJson($response, '', 204);
     }

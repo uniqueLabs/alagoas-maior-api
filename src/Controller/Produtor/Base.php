@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Controller\Cd;
+namespace App\Controller\Produtor;
 
-use App\Service\CdService;
+use App\Service\ProdutorService;
 use Pimple\Psr11\Container;
 
 abstract class Base
@@ -16,8 +16,8 @@ abstract class Base
         $this->container = $container;
     }
 
-    protected function getCdService(): CdService
+    protected function getProdutorService(): ProdutorService
     {
-        return $this->container->get('cd_service');
+        return $this->container->get('produtor_service');
     }
 }

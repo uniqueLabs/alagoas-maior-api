@@ -9,4 +9,3 @@
 /.env
 /.scannerwork/
 /.phpunit.result.cache
-/composer.lock

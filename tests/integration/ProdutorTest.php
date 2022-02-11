@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\integration;
 
-class DvdTest extends TestCase
+class ProdutorTest extends TestCase
 {
     private static $id;
 
@@ -12,10 +12,9 @@ class DvdTest extends TestCase
     {
         $params = [
             '' => '',
-            'name' => 'aaa',
-            'borrowed' => 'aaa'
+            'produtor_id' => 1
         ];
-        $req = $this->createRequest('POST', '/dvd');
+        $req = $this->createRequest('POST', '/produtor');
         $request = $req->withParsedBody($params);
         $response = $this->getAppInstance()->handle($request);
 
@@ -30,7 +29,7 @@ class DvdTest extends TestCase
 
     public function testGetAll(): void
     {
-        $request = $this->createRequest('GET', '/dvd');
+        $request = $this->createRequest('GET', '/produtor');
         $response = $this->getAppInstance()->handle($request);
 
         $result = (string) $response->getBody();
@@ -42,7 +41,7 @@ class DvdTest extends TestCase
 
     public function testGetOne(): void
     {
-        $request = $this->createRequest('GET', '/dvd/' . self::$id);
+        $request = $this->createRequest('GET', '/produtor/' . self::$id);
         $response = $this->getAppInstance()->handle($request);
 
         $result = (string) $response->getBody();
@@ -54,7 +53,7 @@ class DvdTest extends TestCase
 
     public function testGetOneNotFound(): void
     {
-        $request = $this->createRequest('GET', '/dvd/123456789');
+        $request = $this->createRequest('GET', '/produtor/123456789');
         $response = $this->getAppInstance()->handle($request);
 
         $result = (string) $response->getBody();
@@ -65,7 +64,7 @@ class DvdTest extends TestCase
 
     public function testUpdate(): void
     {
-        $req = $this->createRequest('PUT', '/dvd/' . self::$id);
+        $req = $this->createRequest('PUT', '/produtor/' . self::$id);
         $request = $req->withParsedBody(['' => '']);
         $response = $this->getAppInstance()->handle($request);
 
@@ -78,7 +77,7 @@ class DvdTest extends TestCase
 
     public function testDelete(): void
     {
-        $request = $this->createRequest('DELETE', '/dvd/' . self::$id);
+        $request = $this->createRequest('DELETE', '/produtor/' . self::$id);
         $response = $this->getAppInstance()->handle($request);
 
         $result = (string) $response->getBody();

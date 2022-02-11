@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace App\Controller\Cd;
+namespace App\Controller\Produtor;
 
 use App\Helper\JsonResponse;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
-final class Delete extends Base
+final class GetOne extends Base
 {
     /**
      * @param array<string> $args
@@ -18,8 +18,8 @@ final class Delete extends Base
         Response $response,
         array $args
     ): Response {
-        $this->getCdService()->delete((int) $args['id']);
+        $produtor = $this->getProdutorService()->getOne((int) $args['id']);
 
-        return JsonResponse::withJson($response, '', 204);
+        return JsonResponse::withJson($response, (string) json_encode($produtor));
     }
 }

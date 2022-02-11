@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace App\Controller\Cd;
+namespace App\Controller\Produtor;
 
 use App\Helper\JsonResponse;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
-final class GetOne extends Base
+final class Update extends Base
 {
     /**
      * @param array<string> $args
@@ -18,8 +18,9 @@ final class GetOne extends Base
         Response $response,
         array $args
     ): Response {
-        $cd = $this->getCdService()->getOne((int) $args['id']);
+        $input = (array) $request->getParsedBody();
+        $produtor = $this->getProdutorService()->update($input, (int) $args['id']);
 
-        return JsonResponse::withJson($response, (string) json_encode($cd));
+        return JsonResponse::withJson($response, (string) json_encode($produtor));
     }
 }

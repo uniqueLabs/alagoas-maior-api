@@ -45,7 +45,7 @@ final class ProdutorRepository
 
     public function create(object $produtor): object
     {
-        $query = 'INSERT INTO `produtor` (`produtor_id`, `produtor_nome`, `produtor_email`, `produtor_whatsapp`, `produtor_descricao`, `produtor_cpf`, `produtor_regiao`, `produtor_foto_capa`, `produtor_fotos_carrossel`, `produtor_created_at`) VALUES (:produtor_id, :produtor_nome, :produtor_email, :produtor_whatsapp, :produtor_descricao, :produtor_cpf, :produtor_regiao, :produtor_foto_capa, :produtor_fotos_carrossel, :produtor_created_at)';
+        //$query = 'INSERT INTO `produtor` (`produtor_id`, `produtor_nome`, `produtor_email`, `produtor_whatsapp`, `produtor_descricao`, `produtor_cpf`, `produtor_regiao_id`, `produtor_foto_capa`, `produtor_fotos_carrossel`, `produtor_created_at`) VALUES (:produtor_id, :produtor_nome, :produtor_email, :produtor_whatsapp, :produtor_descricao, :produtor_cpf, :produtor_regiao_id, :produtor_foto_capa, :produtor_fotos_carrossel, :produtor_created_at)';
         $statement = $this->getDb()->prepare($query);
         $statement->bindParam('produtor_id', $produtor->produtor_id);
         $statement->bindParam('produtor_nome', $produtor->produtor_nome);
@@ -53,7 +53,7 @@ final class ProdutorRepository
         $statement->bindParam('produtor_whatsapp', $produtor->produtor_whatsapp);
         $statement->bindParam('produtor_descricao', $produtor->produtor_descricao);
         $statement->bindParam('produtor_cpf', $produtor->produtor_cpf);
-        $statement->bindParam('produtor_regiao', $produtor->produtor_regiao);
+        $statement->bindParam('produtor_regiao_id', $produtor->produtor_regiao_id);
         $statement->bindParam('produtor_foto_capa', $produtor->produtor_foto_capa);
         $statement->bindParam('produtor_fotos_carrossel', $produtor->produtor_fotos_carrossel);
         $statement->bindParam('produtor_created_at', $produtor->produtor_created_at);
@@ -83,8 +83,8 @@ final class ProdutorRepository
         if (isset($data->produtor_cpf)) {
             $produtor->produtor_cpf = $data->produtor_cpf;
         }
-        if (isset($data->produtor_regiao)) {
-            $produtor->produtor_regiao = $data->produtor_regiao;
+        if (isset($data->produtor_regiao_id)) {
+            $produtor->produtor_regiao_id = $data->produtor_regiao_id;
         }
         if (isset($data->produtor_foto_capa)) {
             $produtor->produtor_foto_capa = $data->produtor_foto_capa;
@@ -96,7 +96,7 @@ final class ProdutorRepository
             $produtor->produtor_created_at = $data->produtor_created_at;
         }
 
-        $query = 'UPDATE `produtor` SET `produtor_id` = :produtor_id, `produtor_nome` = :produtor_nome, `produtor_email` = :produtor_email, `produtor_whatsapp` = :produtor_whatsapp, `produtor_descricao` = :produtor_descricao, `produtor_cpf` = :produtor_cpf, `produtor_regiao` = :produtor_regiao, `produtor_foto_capa` = :produtor_foto_capa, `produtor_fotos_carrossel` = :produtor_fotos_carrossel, `produtor_created_at` = :produtor_created_at WHERE `produtor_id` = :produtor_id';
+        $query = 'UPDATE `produtor` SET `produtor_id` = :produtor_id, `produtor_nome` = :produtor_nome, `produtor_email` = :produtor_email, `produtor_whatsapp` = :produtor_whatsapp, `produtor_descricao` = :produtor_descricao, `produtor_cpf` = :produtor_cpf, `produtor_regiao_id` = :produtor_regiao_id, `produtor_foto_capa` = :produtor_foto_capa, `produtor_fotos_carrossel` = :produtor_fotos_carrossel, `produtor_created_at` = :produtor_created_at WHERE `id` = :id';
         $statement = $this->getDb()->prepare($query);
         $statement->bindParam('produtor_id', $produtor->produtor_id);
         $statement->bindParam('produtor_nome', $produtor->produtor_nome);
@@ -104,21 +104,21 @@ final class ProdutorRepository
         $statement->bindParam('produtor_whatsapp', $produtor->produtor_whatsapp);
         $statement->bindParam('produtor_descricao', $produtor->produtor_descricao);
         $statement->bindParam('produtor_cpf', $produtor->produtor_cpf);
-        $statement->bindParam('produtor_regiao', $produtor->produtor_regiao);
+        $statement->bindParam('produtor_regiao_id', $produtor->produtor_regiao_id);
         $statement->bindParam('produtor_foto_capa', $produtor->produtor_foto_capa);
         $statement->bindParam('produtor_fotos_carrossel', $produtor->produtor_fotos_carrossel);
         $statement->bindParam('produtor_created_at', $produtor->produtor_created_at);
 
         $statement->execute();
 
-        return $this->checkAndGet((int) $produtor->produtor_id);
+        return $this->checkAndGet((int) $produtor->id);
     }
 
     public function delete(int $produtorId): void
     {
-        $query = 'DELETE FROM `produtor` WHERE `produtor_id` = :id';
+        $query = 'DELETE FROM `produtor` WHERE `id` = :id';
         $statement = $this->getDb()->prepare($query);
-        $statement->bindParam('produtor_id', $produtorId);
+        $statement->bindParam('id', $produtorId);
         $statement->execute();
     }
 }

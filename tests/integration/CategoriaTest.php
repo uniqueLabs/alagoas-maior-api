@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\integration;
 
-class ProdutorTest extends TestCase
+class CategoriaTest extends TestCase
 {
     private static $id;
 
@@ -12,9 +12,10 @@ class ProdutorTest extends TestCase
     {
         $params = [
             '' => '',
-            'produtor_id' => 1
+            'categoria_id' => 1,
+            'categoria_nome' => 'aaa'
         ];
-        $req = $this->createRequest('POST', '/produtor');
+        $req = $this->createRequest('POST', '/categoria');
         $request = $req->withParsedBody($params);
         $response = $this->getAppInstance()->handle($request);
 
@@ -29,7 +30,7 @@ class ProdutorTest extends TestCase
 
     public function testGetAll(): void
     {
-        $request = $this->createRequest('GET', '/produtor');
+        $request = $this->createRequest('GET', '/categoria');
         $response = $this->getAppInstance()->handle($request);
 
         $result = (string) $response->getBody();
@@ -41,7 +42,7 @@ class ProdutorTest extends TestCase
 
     public function testGetOne(): void
     {
-        $request = $this->createRequest('GET', '/produtor/' . self::$id);
+        $request = $this->createRequest('GET', '/categoria/' . self::$id);
         $response = $this->getAppInstance()->handle($request);
 
         $result = (string) $response->getBody();
@@ -53,7 +54,7 @@ class ProdutorTest extends TestCase
 
     public function testGetOneNotFound(): void
     {
-        $request = $this->createRequest('GET', '/produtor/123456789');
+        $request = $this->createRequest('GET', '/categoria/123456789');
         $response = $this->getAppInstance()->handle($request);
 
         $result = (string) $response->getBody();
@@ -64,7 +65,7 @@ class ProdutorTest extends TestCase
 
     public function testUpdate(): void
     {
-        $req = $this->createRequest('PUT', '/produtor/' . self::$id);
+        $req = $this->createRequest('PUT', '/categoria/' . self::$id);
         $request = $req->withParsedBody(['' => '']);
         $response = $this->getAppInstance()->handle($request);
 
@@ -77,7 +78,7 @@ class ProdutorTest extends TestCase
 
     public function testDelete(): void
     {
-        $request = $this->createRequest('DELETE', '/produtor/' . self::$id);
+        $request = $this->createRequest('DELETE', '/categoria/' . self::$id);
         $response = $this->getAppInstance()->handle($request);
 
         $result = (string) $response->getBody();

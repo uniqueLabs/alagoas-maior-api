@@ -31,6 +31,11 @@ final class ProdutoService
         return $this->checkAndGet($produtoId);
     }
 
+    public function getByProdutor(int $produtorId): object
+    {
+        return $this->produtoRepository->checkAndGetByProdutor($produtorId);
+    }
+
     public function create(array $input): object
     {
         $produto = json_decode((string) json_encode($input), false);

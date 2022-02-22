@@ -14,6 +14,7 @@ $app->delete('/produtor/{id}', App\Controller\Produtor\Delete::class);
 $app->get('/produto', App\Controller\Produto\GetAll::class);
 $app->post('/produto', App\Controller\Produto\Create::class);
 $app->get('/produto/{id}', App\Controller\Produto\GetOne::class);
+$app->get('/produto/produtor/{id}', App\Controller\Produto\GetByProdutor::class);
 $app->put('/produto/{id}', App\Controller\Produto\Update::class);
 $app->delete('/produto/{id}', App\Controller\Produto\Delete::class);
 

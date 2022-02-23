@@ -31,7 +31,7 @@ final class ProdutoService
         return $this->checkAndGet($produtoId);
     }
 
-    public function getByProdutor(int $produtorId): object
+    public function getByProdutor(int $produtorId): array
     {
         return $this->produtoRepository->checkAndGetByProdutor($produtorId);
     }

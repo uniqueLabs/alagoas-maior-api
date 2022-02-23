@@ -34,13 +34,13 @@ final class ProdutoRepository
         return $produto;
     }
 
-    public function checkAndGetByProdutor(int $produtoId): object
+    public function checkAndGetByProdutor(int $produtoId): array
     {
         $query = 'SELECT * FROM `produto` WHERE `produto_produtor_id` = :id';
         $statement = $this->getDb()->prepare($query);
         $statement->bindParam('id', $produtoId);
         $statement->execute();
-        $produtoByProdutor = $statement->fetchObject();
+        $produtoByProdutor = (array) $statement->fetchAll();
         if (! $produtoByProdutor) {
             throw new ProdutoException('Produto by produtor not found.', 404);
         }

@@ -36,7 +36,7 @@ final class ProdutorRepository
 
     public function getAll(): array
     {
-        $query = 'SELECT * FROM `produtor` ORDER BY `produtor_nome asc`';
+        $query = 'SELECT * FROM `produtor` ORDER BY `produtor_nome` ASC';
         $statement = $this->getDb()->prepare($query);
         $statement->execute();
 
